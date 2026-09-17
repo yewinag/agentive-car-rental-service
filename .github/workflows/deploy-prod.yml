@@ -1,4 +1,4 @@
-name: Deploy Agentive
+name: Deploy Agentive (Production)
 
 on:
   push:
@@ -17,4 +17,4 @@ jobs:
         run: docker --version
 
       - name: Build Docker image
-        run: docker build -t agentive:ci .
+        run: docker build -t agentive:${{ github.sha }} .
